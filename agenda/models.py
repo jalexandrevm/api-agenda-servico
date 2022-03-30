@@ -7,6 +7,7 @@ class Agendamento(models.Model):
     nome_cliente = models.CharField(max_length=200)
     email_cliente = models.EmailField()
     telefone_cliente = models.CharField(max_length=20)
+    cancelado = models.BooleanField(default=False)
     def __str__(self) -> str:
-        return self.nome_cliente
+        return self.id+" - "+self.nome_cliente
     pass
