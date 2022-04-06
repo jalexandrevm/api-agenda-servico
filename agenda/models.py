@@ -8,6 +8,7 @@ class Agendamento(models.Model):
     email_cliente = models.EmailField()
     telefone_cliente = models.CharField(max_length=20)
     cancelado = models.BooleanField(default=False)
-    def __str__(self) -> str:
-        return self.id+" - "+self.nome_cliente
-    pass
+    class Meta:
+        ordering = ['-data_horario']
+    def __str__(self):
+        return f'''{self.id} - {self.data_horario} - {self.nome_cliente}'''
